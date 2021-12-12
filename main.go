@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "https://github.com/mental12345/uxmal"
+import "github.com/mental12345/uxmal"
 
 func main() {
 	cmd.Execute()
