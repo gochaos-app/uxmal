@@ -1,11 +1,3 @@
-module github.com/xocodeatl/qdjobs
+module github.com/mental12345/uxmal
 
-go 1.14
-
-require (
-	github.com/urfave/cli v1.22.5
-	golang.org/x/tools v0.1.4 // indirect
-	k8s.io/api v0.20.2
-	k8s.io/apimachinery v0.20.2
-	k8s.io/client-go v0.20.2
-)
+go 1.16
