@@ -1,8 +1,8 @@
 package k8s
 
 import (
-    k8s "github.com/xocodeatl/qdjobs/k8s"
-    status "github.com/xocodeatl/qdjobs/k8s/status"
+    k8s "github.com/mental12345/uxmal/k8s"
+    status "github.com/mental12345/uxmal/k8s/status"
 	v1 "k8s.io/api/core/v1"
 	"log"
 	"fmt"

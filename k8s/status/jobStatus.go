@@ -1,7 +1,7 @@
 package k8s
 
 import (
-    k8s "github.com/xocodeatl/qdjobs/k8s"
+    k8s "github.com/mental12345/uxmal/k8s"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"log"
 	"context"
