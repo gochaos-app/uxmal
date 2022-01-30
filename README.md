@@ -11,11 +11,15 @@ USAGE:
    uxmal command [command options]
 
 COMMANDS:
-   create:  uxmal create --name myJob --img ubuntu --cmd "ls -ltr"
-   status:  uxmal status --name myJob
-   logs:    uxmal logs --name myJob
-   run:     uxmal run --name myJob --img ubuntu --cmd "ls -ltr"   
-   delete:  uxmal delete --name myJob
+   cron:    uxmal cron
+      create:  uxmal cron create --name myCron --img ubuntu --cmd "ls -ltr" --sch "* * * * *"
+      delete: uxmal cron delete --name myCron
+   job:     uxmal job
+      create:  uxmal job create --name myJob --img ubuntu --cmd "ls -ltr"
+      status:  uxmal job status --name myJob
+      logs:    uxmal job logs --name myJob
+      run:     uxmal job run --name myJob --img ubuntu --cmd "ls -ltr"   
+      delete:  uxmal job delete --name myJob
    help, h    Shows a list of commands or help for one command
 ```
 ## Installation
