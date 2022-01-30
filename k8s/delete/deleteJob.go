@@ -22,3 +22,17 @@ func DeleteJobs(name string) {
 	pod_name := k8s.JobDetails(name)
 	log.Println("Pod name: ", pod_name)
 }
+
+func DeleteCronjobs(name string) {
+	clientset, _ := k8s.K8sConfig()
+	err := clientset.BatchV1beta1().CronJobs("default").Delete(context.TODO(), name, metav1.DeleteOptions{})
+
+	if err != nil {
+		log.Println(err)
+		log.Fatalln("Failed to delete K8s cronjob.")
+	}
+
+	//print job details
+	log.Println("Deleted K8s cronjob successfully")
+
+}
