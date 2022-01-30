@@ -13,7 +13,7 @@ USAGE:
 COMMANDS:
    cron:    uxmal cron
       create:  uxmal cron create --name myCron --img ubuntu --cmd "ls -ltr" --sch "* * * * *"
-      delete: uxmal cron delete --name myCron
+      delete:  uxmal cron delete --name myCron
    job:     uxmal job
       create:  uxmal job create --name myJob --img ubuntu --cmd "ls -ltr"
       status:  uxmal job status --name myJob
