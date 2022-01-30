@@ -11,7 +11,7 @@ var cronjobCmd = &cobra.Command{
 	Use:   "cron",
 	Short: "Operations with cronjobs in kubernetes cluster.",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Use create, delete logs or status sub-commands")
+		fmt.Println("Use create or delete sub-commands")
 	},
 }
 

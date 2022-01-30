@@ -8,7 +8,7 @@ import (
 // createCronCmd represents the createCron command
 var createCronCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Creates a simple cronjob given a set of parameters",
+	Short: "Creates a simple cronjob given a set of parameters.",
 	Long:  `uxmal cron create --name "myCronjob" --img "Image" --cmd "ls -ltr" --sch "* * * * *" `,
 	Run: func(cmd *cobra.Command, args []string) {
 		name, _ := cmd.Flags().GetString("name")
