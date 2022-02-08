@@ -15,7 +15,8 @@ var createCronCmd = &cobra.Command{
 		image, _ := cmd.Flags().GetString("img")
 		command, _ := cmd.Flags().GetString("cmd")
 		schedule, _ := cmd.Flags().GetString("sch")
-		k8s.K8sCronJobs(name, image, command, schedule)
+		ns, _ := cmd.Flags().GetString("ns")
+		k8s.K8sCronJobs(name, image, command, schedule, ns)
 	},
 }
 
@@ -29,5 +30,6 @@ func init() {
 	createCronCmd.MarkFlagRequired("cmd")
 	createCronCmd.Flags().String("sch", "", "Schedule")
 	createCronCmd.MarkFlagRequired("sch")
+	createCronCmd.Flags().String("ns", "", "Namespace")
 
 }

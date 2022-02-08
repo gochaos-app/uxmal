@@ -8,9 +8,12 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-func GetJobsStatus(name string) (int, error) {
+func GetJobsStatus(name string, ns string) (int, error) {
 	clientset, _ := k8s.K8sConfig()
-	jobs := clientset.BatchV1().Jobs("default")
+	if ns == "" {
+		ns = "default"
+	}
+	jobs := clientset.BatchV1().Jobs(ns)
 	job, err := jobs.Get(context.TODO(), name, metav1.GetOptions{})
 
 	if err != nil {

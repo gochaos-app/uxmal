@@ -11,7 +11,8 @@ var logsJobCmd = &cobra.Command{
 	Short: "Get logs of a given job.",
 	Run: func(cmd *cobra.Command, args []string) {
 		jobName, _ := cmd.Flags().GetString("name")
-		logs.LogsJobs(jobName)
+		ns, _ := cmd.Flags().GetString("ns")
+		logs.LogsJobs(jobName, ns)
 	},
 }
 
@@ -19,4 +20,6 @@ func init() {
 	jobCmd.AddCommand(logsJobCmd)
 	logsJobCmd.Flags().String("name", "", "Name of job")
 	logsJobCmd.MarkFlagRequired("name")
+	logsJobCmd.Flags().String("ns", "", "Namespace")
+
 }

@@ -12,9 +12,12 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-func K8sJobs(name string, image string, cmd string) {
+func K8sJobs(name string, image string, cmd string, ns string) {
 	clientset, _ := k8s.K8sConfig()
-	jobs := clientset.BatchV1().Jobs("default")
+	if ns == "" {
+		ns = "default"
+	}
+	jobs := clientset.BatchV1().Jobs(ns)
 	var jobbackoff int32 = 0
 
 	jobSpec := &batchv1.Job{
@@ -46,15 +49,18 @@ func K8sJobs(name string, image string, cmd string) {
 
 	//print job details
 	log.Println("Created K8s job successfully")
-	pod_name := k8s.JobDetails(name)
+	pod_name := k8s.JobDetails(name, ns)
 	log.Println("Pod name: ", pod_name)
 }
 
-func K8sCronJobs(name string, image string, cmd string, schedule string) {
+func K8sCronJobs(name string, image string, cmd string, schedule string, ns string) {
 	clientset, _ := k8s.K8sConfig()
 
+	if ns == "" {
+		ns = "default"
+	}
 	var jobbackoff int32 = 0
-	cronjobs := clientset.BatchV1beta1().CronJobs("default")
+	cronjobs := clientset.BatchV1beta1().CronJobs(ns)
 
 	cronjobSpec := &v1beta1.CronJob{
 		ObjectMeta: metav1.ObjectMeta{

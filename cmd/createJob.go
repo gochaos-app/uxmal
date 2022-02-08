@@ -14,8 +14,8 @@ var createJobCmd = &cobra.Command{
 		name, _ := cmd.Flags().GetString("name")
 		image, _ := cmd.Flags().GetString("img")
 		command, _ := cmd.Flags().GetString("cmd")
-
-		k8s.K8sJobs(name, image, command)
+		ns, _ := cmd.Flags().GetString("ns")
+		k8s.K8sJobs(name, image, command, ns)
 	},
 }
 
@@ -27,5 +27,6 @@ func init() {
 	createJobCmd.MarkFlagRequired("img")
 	createJobCmd.Flags().String("cmd", "", "Command")
 	createJobCmd.MarkFlagRequired("cmd")
+	createJobCmd.Flags().String("ns", "", "Namespace")
 
 }

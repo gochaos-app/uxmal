@@ -12,7 +12,8 @@ var deleteCronCmd = &cobra.Command{
 	Short: "Delete a cronjob by name.",
 	Run: func(cmd *cobra.Command, args []string) {
 		name, _ := cmd.Flags().GetString("name")
-		del.DeleteCronjobs(name)
+		ns, _ := cmd.Flags().GetString("ns")
+		del.DeleteCronjobs(name, ns)
 	},
 }
 
@@ -20,4 +21,5 @@ func init() {
 	cronjobCmd.AddCommand(deleteCronCmd)
 	deleteCronCmd.Flags().String("name", "", "Name of job")
 	deleteCronCmd.MarkFlagRequired("name")
+	deleteCronCmd.Flags().String("ns", "", "Namespace")
 }

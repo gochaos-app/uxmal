@@ -13,7 +13,8 @@ var runJobCmd = &cobra.Command{
 		name, _ := cmd.Flags().GetString("name")
 		image, _ := cmd.Flags().GetString("img")
 		command, _ := cmd.Flags().GetString("cmd")
-		run.RunJob(name, image, command)
+		ns, _ := cmd.Flags().GetString("ns")
+		run.RunJob(name, image, command, ns)
 	},
 }
 
@@ -25,4 +26,6 @@ func init() {
 	runJobCmd.MarkFlagRequired("img")
 	runJobCmd.Flags().String("cmd", "", "Command")
 	runJobCmd.MarkFlagRequired("cmd")
+	runJobCmd.Flags().String("ns", "", "Namespace")
+
 }

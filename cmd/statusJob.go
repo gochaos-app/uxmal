@@ -11,7 +11,8 @@ var statusJobCmd = &cobra.Command{
 	Short: "uxmal status checks the status of a given job name in k8s.",
 	Run: func(cmd *cobra.Command, args []string) {
 		jobName, _ := cmd.Flags().GetString("name")
-		status.GetJobsStatus(jobName)
+		ns, _ := cmd.Flags().GetString("ns")
+		status.GetJobsStatus(jobName, ns)
 	},
 }
 
@@ -19,5 +20,6 @@ func init() {
 	jobCmd.AddCommand(statusJobCmd)
 	statusJobCmd.Flags().String("name", "", "Name of job")
 	statusJobCmd.MarkFlagRequired("name")
+	statusJobCmd.Flags().String("ns", "", "Namespace")
 
 }
