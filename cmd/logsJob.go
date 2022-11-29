@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	logs "github.com/mental12345/uxmal/k8s/logs"
+	logs "github.com/gochaos-app/uxmal/k8s/logs"
 	"github.com/spf13/cobra"
 )
 

@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	k8s "github.com/mental12345/uxmal/k8s/create"
+	k8s "github.com/gochaos-app/uxmal/k8s/create"
 	"github.com/spf13/cobra"
 )
 

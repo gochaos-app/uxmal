@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	del "github.com/mental12345/uxmal/k8s/delete"
+	del "github.com/gochaos-app/uxmal/k8s/delete"
 
 	"github.com/spf13/cobra"
 )

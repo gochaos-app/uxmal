@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	k8s "github.com/mental12345/uxmal/k8s"
+	k8s "github.com/gochaos-app/uxmal/k8s"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 

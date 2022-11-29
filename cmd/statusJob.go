@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	status "github.com/mental12345/uxmal/k8s/status"
+	status "github.com/gochaos-app/uxmal/k8s/status"
 	"github.com/spf13/cobra"
 )
 

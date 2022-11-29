@@ -5,7 +5,7 @@ import (
 	"log"
 	"strings"
 
-	k8s "github.com/mental12345/uxmal/k8s"
+	k8s "github.com/gochaos-app/uxmal/k8s"
 	batchv1 "k8s.io/api/batch/v1"
 	"k8s.io/api/batch/v1beta1"
 	v1 "k8s.io/api/core/v1"

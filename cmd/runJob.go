@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	run "github.com/mental12345/uxmal/k8s/run"
+	run "github.com/gochaos-app/uxmal/k8s/run"
 	"github.com/spf13/cobra"
 )
 

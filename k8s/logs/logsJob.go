@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	k8s "github.com/mental12345/uxmal/k8s"
-	status "github.com/mental12345/uxmal/k8s/status"
+	k8s "github.com/gochaos-app/uxmal/k8s"
+	status "github.com/gochaos-app/uxmal/k8s/status"
 	v1 "k8s.io/api/core/v1"
 )
 

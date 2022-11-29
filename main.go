@@ -1,8 +1,7 @@
 package main
 
-import "github.com/mental12345/uxmal/cmd"
+import "github.com/gochaos-app/uxmal/cmd"
 
 func main() {
 	cmd.Execute()
-
 }

@@ -4,9 +4,9 @@ import (
 	"log"
 	"time"
 
-	create "github.com/mental12345/uxmal/k8s/create"
-	logs "github.com/mental12345/uxmal/k8s/logs"
-	status "github.com/mental12345/uxmal/k8s/status"
+	create "github.com/gochaos-app/uxmal/k8s/create"
+	logs "github.com/gochaos-app/uxmal/k8s/logs"
+	status "github.com/gochaos-app/uxmal/k8s/status"
 )
 
 func RunJob(name string, image string, cmd string, ns string) {
